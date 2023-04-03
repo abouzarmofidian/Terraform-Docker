@@ -55,6 +55,7 @@ resource "docker_container" "php-httpd" {
   }
   volumes {
     container_path = "/var/www/html"
+    from_container = "webserver"
   host_path="/root/code/terraformchallenges/challenge2/lamp_stack/website_content"
   }
 
