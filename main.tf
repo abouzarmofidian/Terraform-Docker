@@ -57,6 +57,7 @@ resource "docker_container" "php-httpd" {
     container_path = "/var/www/html"
   host_path="/root/code/terraform-challenges/challenge2/lamp_stack/website_content/"
   }
+  
 
 }
 
@@ -76,7 +77,7 @@ resource "docker_container" "phpmyadmin" {
     label = "challenge"
     value = "second"
   }
-
+  depends_on = [docker_container.mariadb]
 }
 
 # mariadb container
